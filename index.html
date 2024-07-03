@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb On Off</title>
+    <style>
+        .title{
+            text-align: center;
+        }
+        .icon{
+            height: 70px;
+            width: 70px;
+            margin-left: 40px;
+        }
+        .content{
+            text-align: center;
+            height: 600px;
+        }
+        .button{
+            border-radius: 10px;
+            width: 50px;
+        }
+        .btn-content{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .bg-dark{
+            background-color: rgb(7, 226, 153);
+            color: white;
+        }
+        .bg-light{
+            background-color: rgb(174, 244, 221);
+            color: black;
+        }
+    </style>
+</head>
+<body class="bg-light" id="body">
+    <h1 class="title">Glowing Candel</h1>
+    <div class="theme">
+        <img src="./img/bright.png"class="icon" onclick="enableLight()"/>
+        <img src="./img/dark.png"class="icon" onclick="enableDark()"/>
+    </div>
+    <div class="content">
+    <img src="./img/candel.png" alt="off" id="candel" height="500px">
+    <br> <br>
+    <div class="btn-content">
+    <button class="button"type="button" onclick="glowingCandle()">
+        ON
+    </button>
+    <button class="button" type="button" onclick="damCandle()">
+        OFF
+    </button>
+    </div>
+    </div>
+    <script>
+        const bulbElement = document.getElementById('candel');
+        function glowingCandle() {
+            bulbElement.src = "./img/glowing-candel.png";
+        }
+        function damCandle() {
+            bulbElement.src = "./img/candel.png";
+        }
+        function enableDark(){
+            const mainBody = document.getElementById("body")
+            mainBody.classList.remove("bg-light")
+            mainBody.classList.add("bg-dark")
+        }
+        function enableLight(){
+            const mainBody = document.getElementById("body")
+            mainBody.classList.remove("bg-dark")
+            mainBody.classList.add("bg-light")
+        }
+    </script>
+</body>
+</html>
